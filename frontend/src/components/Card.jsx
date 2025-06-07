@@ -4,24 +4,28 @@ const Card = () => {
   const qbank = [
     {
       id: 1,
+      type: "OOP",
       question: "What are the principles of OOP?",
       answer:
         "The principles of OOP are encapsulation, inheritance, polymorphism, and abstraction.",
     },
     {
       id: 2,
+      type: "DBMS",
       question: "What is the lowest normal form in database design?",
       answer:
         "The lowest normal form in database design is the First Normal Form (1NF).",
     },
     {
       id: 3,
+      type: "OOP",
       question: "What is the purpose of a constructor in a class?",
       answer:
         "A constructor is a special method used to initialize objects of a class.",
     },
     {
       id: 4,
+      type: "DBMS",
       question:
         "What is the difference between an interface and an abstract class?",
       answer:
