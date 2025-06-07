@@ -15,7 +15,7 @@ export const questionsReducer = (state, action) => {
 
 export const QuestionsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(questionsReducer, {
-    questions: null,
+    questions: [],
   });
 
   return (

@@ -9,8 +9,5 @@ const router = express.Router();
 // GET all Questions
 router.get("/", getQuestions);
 
-// GET certain type of question
-router.get("/:type", getQuestionType);
-
 // Export the router
 module.exports = router;

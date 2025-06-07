@@ -5,8 +5,7 @@ const Navbar = () => {
       <h1>Welcome to ODIQ</h1>
       <div className="links">
         <Link to="/">Home</Link>
-        <Link to="/OOPS">OOPS</Link>
-        <Link to="/DBMS">DBMS</Link>
+        <Link to="/about">About</Link>
       </div>
     </div>
   );

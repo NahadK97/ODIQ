@@ -21,18 +21,17 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
   border-bottom: 1px solid #f2f2f2;
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .mobile-only {
     display: block;
   }
 }
 
-
 @media (min-width: 769px) {
   .mobile-only {
     display: none;
   }
-} */
+}
 
 .navbar h1 {
   color: #a9dc76;
@@ -45,6 +44,7 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
 .navbar a {
   margin-left: 16px;
   text-decoration: none;
+  border: none;
   padding: 6px;
 }
 
@@ -53,6 +53,7 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
 }
 
 .content {
+  border: 1px solid #ccc;
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
@@ -60,10 +61,10 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
 
 .card-item {
   margin: 24px 0;
-  padding: 20px 24px;
+  padding: 1rem;
   border-radius: 12px;
   background-color: #1e1e2f;
-  border: 1px solid #2a2a3b;
+  border: 1px solid #ccc;
   transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
@@ -96,6 +97,20 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
   transition: background-color 0.3s ease;
 }
 
+.que {
+  position: relative;
+}
+
+.que p {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #555;
+}
+
 .ans p {
   margin-top: 16px;
   color: #ffffff;
@@ -103,59 +118,32 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
   line-height: 1.4;
 }
 
-/* blog details page */
-.blog-details h2 {
-  font-size: 20px;
-  color: #f1356d;
-  margin-bottom: 8px;
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0px;
 }
 
-.blog-details div {
-  margin: 20px 0;
-}
-
-.blog-details button {
-  background: #f1356d;
-  color: #fff;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
+.button {
+  background-color: transparent;
+  border: 1px solid #ffd369; /* Teal-700 */
+  color: #ffd369;
+  border-radius: 4px;
+  padding: 6px 12px;
   cursor: pointer;
-}
-/* create new blog form */
-.create {
-  max-width: 400px;
-  margin: 0 auto;
-  text-align: center;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
 }
 
-.create label {
-  text-align: left;
-  display: block;
+.button:hover {
+  background-color: #ffd369;
+  color: #1e1e2f;
 }
 
-.create h2 {
-  font-size: 20px;
-  color: #f1356d;
-  margin-bottom: 30px;
-}
-
-.create input,
-.create textarea,
-.create select {
-  width: 100%;
-  padding: 6px 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
-  display: block;
-}
-
-.create button {
-  background: #f1356d;
-  color: #fff;
-  border: 0;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
+/* Active (selected) filter */
+.button.active {
+  background-color: #ffd369;
+  color: #1e1e2f;
 }

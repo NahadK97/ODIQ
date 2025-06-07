@@ -16,6 +16,7 @@ const Card = ({ question, index }) => {
     <div className="card-item">
       <div className="que">
         <h2>Question {index + 1}</h2>
+        <p>{question.type}</p>
         <h3>{question.question}</h3>
       </div>
       <button onClick={() => toggleAnswer(question._id)}>
@@ -29,20 +30,3 @@ const Card = ({ question, index }) => {
 };
 
 export default Card;
-
-// <div className="card">
-//   {qbank.map((item, index) => (
-//     <div key={item.id} className="card-item">
-//       <div className="que">
-//         <h2>Question {index + 1}</h2>
-//         <h3>{item.question}</h3>
-//       </div>
-//       <button onClick={() => toggleAnswer(item.id)}>
-//         {visibleAnswers[item.id] ? "Hide Answer" : "Show Answer"}
-//       </button>
-//       <div className="ans">
-//         {visibleAnswers[item.id] && <p>{item.answer}</p>}
-//       </div>
-//     </div>
-//   ))}
-// </div>
