@@ -29,7 +29,7 @@ const Card = ({ question, index }) => {
         {visibleAnswers[question._id] && <p>{question.answer}</p>}
       </div>
 
-      <span>delete</span>
+      <span className="material-symbols-outlined">delete</span>
     </div>
   );
 };
