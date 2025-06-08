@@ -16,15 +16,20 @@ const Card = ({ question, index }) => {
     <div className="card-item">
       <div className="que">
         <h2>Question {index + 1}</h2>
-        <p>{question.type}</p>
         <h3>{question.question}</h3>
       </div>
-      <button onClick={() => toggleAnswer(question._id)}>
-        {visibleAnswers[question._id] ? "Hide Answer" : "Show Answer"}
-      </button>
+      <div className="card-footer">
+        <button onClick={() => toggleAnswer(question._id)}>
+          {visibleAnswers[question._id] ? "Hide Answer" : "Show Answer"}
+        </button>
+        <p>{question.type}</p>
+      </div>
+
       <div className="ans">
         {visibleAnswers[question._id] && <p>{question.answer}</p>}
       </div>
+
+      <span>delete</span>
     </div>
   );
 };

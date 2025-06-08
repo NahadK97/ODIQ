@@ -53,13 +53,13 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
 }
 
 .content {
-  border: 1px solid #ccc;
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
 }
 
 .card-item {
+  position: relative;
   margin: 24px 0;
   padding: 1rem;
   border-radius: 12px;
@@ -86,6 +86,17 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
   margin-bottom: 12px;
 }
 
+.card-item span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
+}
+
 .card-item button {
   background-color: #a9dc76;
   color: #1e1e2f;
@@ -101,11 +112,21 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
   position: relative;
 }
 
-.que p {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0.5rem;
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.card-footer .type-label {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #bbbbbb;
+}
+.card-footer p {
+  margin: 1rem;
   font-size: 0.9rem;
   font-weight: bold;
   color: #555;
