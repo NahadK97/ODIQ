@@ -8,6 +8,14 @@ export const questionsReducer = (state, action) => {
       return {
         questions: action.payload,
       };
+    case "CREATE_QUESTION":
+      return {
+        questions: [action.payload, ...state.questions],
+      };
+    case "DELETE_QUESTION":
+      return {
+        questions: state.questions.filter((q) => q._id !== action.payload._id),
+      };
     default:
       return state;
   }

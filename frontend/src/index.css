@@ -146,7 +146,7 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
 
 .button {
   background-color: transparent;
-  border: 1px solid #ffd369; /* Teal-700 */
+  border: 1px solid #ffd369;
   color: #ffd369;
   border-radius: 4px;
   padding: 6px 12px;
@@ -164,4 +164,45 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
 .button.active {
   background-color: #ffd369;
   color: #1e1e2f;
+}
+
+/* question form */
+.create {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.create label {
+  text-align: left;
+  margin: 20px 0;
+  display: block;
+  font-weight: 600;
+}
+
+.create h3 {
+  font-size: 20px;
+  color: #a9dc76;
+}
+
+.create textarea,
+.create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.create button {
+  margin-top: 20px;
+  background: #a9dc76;
+  color: black;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
 }
