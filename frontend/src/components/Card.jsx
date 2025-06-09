@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useQuestionsContext } from "../hooks/useQuestionsContext";
 
 const Card = ({ question, index }) => {
+  const { dispatch } = useQuestionsContext();
   const [visibleAnswers, setVisibleAnswers] = useState({});
 
   const toggleAnswer = (id) => {
@@ -8,6 +10,19 @@ const Card = ({ question, index }) => {
       ...prev,
       [id]: !prev[id],
     }));
+  };
+
+  const handleClick = async () => {
+    const response = await fetch("/api/questions/" + question._id, {
+      method: "DELETE",
+    });
+    const json = await response.json();
+
+    if (response.ok) {
+      dispatch({ type: "DELETE_QUESTION", payload: json });
+    } else {
+      console.error("Error deleting workout:", json);
+    }
   };
 
   if (!question) return null;
@@ -29,7 +44,9 @@ const Card = ({ question, index }) => {
         {visibleAnswers[question._id] && <p>{question.answer}</p>}
       </div>
 
-      <span className="material-symbols-outlined">delete</span>
+      <span className="material-symbols-outlined" onClick={handleClick}>
+        delete
+      </span>
     </div>
   );
 };
