@@ -186,12 +186,18 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
   color: #a9dc76;
 }
 
+.create textarea {
+  height: 100px;
+  font-size: 0.9rem;
+}
+
 .create textarea,
 .create select {
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
   border: 1px solid #ddd;
+  border-radius: 5px;
   box-sizing: border-box;
   display: block;
 }
