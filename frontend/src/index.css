@@ -4,21 +4,21 @@
   margin: 0;
   font-family: "Quicksand";
   color: #f4f4f4;
+  /* background-color: #1e1e2f; */
+}
+
+body {
   background-color: #1e1e2f;
 }
 
-/* Secondary Text / Subtext: #bbbbbb
-Question Titles: #ffd369 (Warm yellow — stands out without being harsh)
-Answer Box Background: #2b2b3d
-Code Block Background: #151522
-Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
 .navbar {
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 600px;
+  max-width: 1400px;
   margin: 0 auto;
   border-bottom: 1px solid #f2f2f2;
+  justify-content: space-between;
 }
 
 @media (max-width: 768px) {
@@ -37,19 +37,22 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
   color: #a9dc76;
 }
 
-.navbar .links {
-  margin-left: auto;
-}
-
-.navbar a {
+.navbar a,
+button {
   margin-left: 16px;
   text-decoration: none;
   border: none;
   padding: 6px;
 }
 
-.navbar a:hover {
-  color: #a9dc76;
+.navbar button {
+  background: #a9dc76;
+  color: #1e1e2f;
+  border: 2px solid #a9dc76;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
 }
 
 .content {
@@ -174,7 +177,7 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
   padding: 20px;
 }
 
-.create label {
+label {
   text-align: left;
   margin: 20px 0;
   display: block;
@@ -202,7 +205,7 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
   display: block;
 }
 
-.create button {
+form button {
   margin-top: 20px;
   background: #a9dc76;
   color: black;
@@ -211,4 +214,42 @@ Code Text Color: #e6db74 or #a9dc76 (for syntax-highlighted code) */
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
+}
+
+/* auth forms */
+form.signup,
+form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #05494a;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form.signup h3,
+form.login h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+}
+
+form.signup label,
+form.login label {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+  font-weight: 500;
+}
+
+form.signup input,
+form.login input {
+  width: 100%;
+  color: black;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
 }

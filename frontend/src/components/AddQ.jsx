@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useQuestionsContext } from "../hooks/useQuestionsContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const AddQ = () => {
   const { dispatch } = useQuestionsContext();
+  const { user } = useAuthContext();
 
   const [form, setForm] = useState({
     question: "",
@@ -21,10 +23,17 @@ const AddQ = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!user) {
+      setError("You must be logged in");
+      return;
+    }
 
     const response = await fetch("/api/questions", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
       body: JSON.stringify(form),
     });
 

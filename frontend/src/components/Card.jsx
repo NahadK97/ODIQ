@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useQuestionsContext } from "../hooks/useQuestionsContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const Card = ({ question, index }) => {
   const { dispatch } = useQuestionsContext();
+  const { user } = useAuthContext();
   const [visibleAnswers, setVisibleAnswers] = useState({});
 
   const toggleAnswer = (id) => {
@@ -13,8 +15,14 @@ const Card = ({ question, index }) => {
   };
 
   const handleClick = async () => {
+    if (!user) {
+      return;
+    }
     const response = await fetch("/api/questions/" + question._id, {
       method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
     });
     const json = await response.json();
 
