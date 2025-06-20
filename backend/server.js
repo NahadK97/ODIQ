@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const questionRoutes = require("./routes/questions");
 const userRoutes = require("./routes/user");
@@ -14,6 +15,20 @@ app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
 });
+
+const allowedOrigins = process.env.CLIENT_URLS.split(",");
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+);
 
 // routes
 app.use("/api/questions", questionRoutes);
