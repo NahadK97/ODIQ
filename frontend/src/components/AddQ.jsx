@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useQuestionsContext } from "../hooks/useQuestionsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
+import { useNavigate } from "react-router-dom";
 
 const AddQ = () => {
   const { dispatch } = useQuestionsContext();
   const { user } = useAuthContext();
-
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     question: "",
     answer: "",
@@ -46,6 +47,7 @@ const AddQ = () => {
       setForm({ question: "", answer: "", type: "" });
       dispatch({ type: "CREATE_QUESTION", payload: json });
     }
+    navigate("/");
   };
 
   return (
