@@ -29,7 +29,7 @@ const Login = () => {
         required
       />
       <button disabled={isLoading}>Log in</button>
-      {error && <p className="error">{error}</p>}
+      {error && <p className="error">Unauthorized Access: {error}</p>}
     </form>
   );
 };

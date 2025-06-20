@@ -51,10 +51,11 @@ const Card = ({ question, index }) => {
       <div className="ans">
         {visibleAnswers[question._id] && <p>{question.answer}</p>}
       </div>
-
-      <span className="material-symbols-outlined" onClick={handleClick}>
-        delete
-      </span>
+      {user && (
+        <span className="material-symbols-outlined" onClick={handleClick}>
+          delete
+        </span>
+      )}
     </div>
   );
 };

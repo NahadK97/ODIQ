@@ -4,7 +4,7 @@ import { useAuthContext } from "./hooks/useAuthContext";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+// import Signup from "./pages/Signup";
 import AddQ from "./components/AddQ";
 
 function App() {
@@ -15,10 +15,7 @@ function App() {
         <Navbar />
         <div className="home">
           <Routes>
-            <Route
-              path="/"
-              element={user ? <Home /> : <Navigate to="/login" />}
-            />
+            <Route path="/" element={<Home />} />
             <Route
               path="/add"
               element={user ? <AddQ /> : <Navigate to="/login" />}
@@ -27,10 +24,10 @@ function App() {
               path="/login"
               element={!user ? <Login /> : <Navigate to="/" />}
             />
-            <Route
+            {/* <Route
               path="/signup"
               element={!user ? <Signup /> : <Navigate to="/" />}
-            />
+            /> */}
           </Routes>
         </div>
       </BrowserRouter>

@@ -10,13 +10,21 @@ const Home = () => {
 
   useEffect(() => {
     const fetchQuestions = async () => {
-      const response = await fetch("/api/questions");
-      const json = await response.json();
-      if (response.ok) {
-        dispatch({ type: "SET_QUESTIONS", payload: json });
-        setFilteredQuestions(json); // Show all initially
+      try {
+        const response = await fetch("/api/questions");
+        const json = await response.json();
+
+        if (response.ok) {
+          dispatch({ type: "SET_QUESTIONS", payload: json });
+          setFilteredQuestions(json);
+        } else {
+          console.error("Fetch error:", json.error || json.message);
+        }
+      } catch (err) {
+        console.error("Network error:", err.message);
       }
     };
+
     fetchQuestions();
   }, [dispatch]);
 
@@ -32,6 +40,7 @@ const Home = () => {
   }, [selectedFilters, questions]);
 
   const getUniqueTypes = () => {
+    if (!questions || questions.length === 0) return [];
     const types = questions.map((q) => q.type);
     return [...new Set(types)];
   };

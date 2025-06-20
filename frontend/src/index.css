@@ -255,3 +255,9 @@ form.login input {
   font-size: 16px;
   box-sizing: border-box;
 }
+
+p.error {
+  color: #ff4d4d;
+  font-size: 1rem;
+  margin-top: 10px;
+}
