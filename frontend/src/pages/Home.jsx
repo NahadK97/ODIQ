@@ -11,9 +11,7 @@ const Home = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch(
-          `${process.env.REACT_APP_API_URL}/api/questions`
-        );
+        const response = await fetch("/api/questions");
         const json = await response.json();
 
         if (response.ok) {

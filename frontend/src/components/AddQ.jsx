@@ -28,17 +28,14 @@ const AddQ = () => {
       setError("You must be logged in");
       return;
     }
-    const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/api/questions`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${user.token}`,
-        },
-        body: JSON.stringify(form),
-      }
-    );
+    const response = await fetch("/api/questions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
+      body: JSON.stringify(form),
+    });
 
     const json = await response.json();
 
