@@ -28,6 +28,7 @@ const AddQ = () => {
       setError("You must be logged in");
       return;
     }
+
     const response = await fetch("/api/questions", {
       method: "POST",
       headers: {

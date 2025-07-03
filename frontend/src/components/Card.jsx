@@ -18,7 +18,7 @@ const Card = ({ question, index }) => {
     if (!user) {
       return;
     }
-    const response = await fetch("/api/questions" + question._id, {
+    const response = await fetch("/api/questions/" + question._id, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${user.token}`,
