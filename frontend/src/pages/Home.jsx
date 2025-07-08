@@ -11,7 +11,11 @@ const Home = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await fetch("/api/questions");
+        const API_BASE =
+          process.env.NODE_ENV === "production"
+            ? process.env.REACT_APP_BACKEND_URL
+            : "";
+        const response = await fetch(`${API_BASE}/api/questions`);
         const json = await response.json();
 
         if (response.ok) {

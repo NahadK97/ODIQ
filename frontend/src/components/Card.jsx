@@ -18,7 +18,13 @@ const Card = ({ question, index }) => {
     if (!user) {
       return;
     }
-    const response = await fetch("/api/questions/" + question._id, {
+
+    const API_BASE =
+      process.env.NODE_ENV === "production"
+        ? process.env.REACT_APP_BACKEND_URL
+        : "";
+
+    const response = await fetch(`${API_BASE}/api/questions/` + question._id, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${user.token}`,

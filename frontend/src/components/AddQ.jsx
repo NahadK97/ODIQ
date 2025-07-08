@@ -29,7 +29,12 @@ const AddQ = () => {
       return;
     }
 
-    const response = await fetch("/api/questions", {
+    const API_BASE =
+      process.env.NODE_ENV === "production"
+        ? process.env.REACT_APP_BACKEND_URL
+        : "";
+
+    const response = await fetch(`${API_BASE}/api/questions`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
