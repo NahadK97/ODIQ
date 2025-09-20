@@ -9,9 +9,9 @@ ODIQ is useful for:
 * Self-paced Learning – Learn and test knowledge at your own speed.
 
 <p align="center">
-  <img src="docs/screenshot1.png" alt="ODIQ Flashcards" width="600"/>
+  <img src="docs/main.png" alt="Question View" width="600"/>
 </p>  
 
 <p align="center">
-  <img src="docs/screenshot2.png" alt="ODIQ Questions View" width="600"/>
+  <img src="docs/card.png" alt="ODIQ Flashcards" width="600"/>
 </p>  
